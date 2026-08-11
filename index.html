@@ -3,622 +3,547 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TVK Hub — Chief Minister Vijay | Tamilaga Vettri Kazhagam</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>tvkhub.com — Premium Domain For Sale</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+/* ── RESET & TOKENS ──────────────────────────────── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box }
 
-/* ─── TVK FLAG PALETTE (LIGHT VERSION) ───
-   Flag: Maroon band / Golden-Yellow band / Maroon band
-   Light interpretation:
-     Background:  warm ivory/cream  (flag yellow lightened to paper)
-     Accents:     deep maroon + rich gold
-     Mid-section: soft golden-amber wash
-*/
-:root{
-  --maroon:       #7A1520;
-  --maroon-deep:  #540E18;
-  --maroon-mid:   #9B2030;
-  --maroon-light: #F5E8EA;   /* very pale maroon tint */
-  --gold:         #B8860B;
-  --gold-rich:    #C9973A;
-  --gold-pale:    #FDF3D8;   /* flag yellow → pastel */
-  --gold-mid:     #F5DFA0;   /* mid yellow band */
-  --cream:        #FEFAF2;   /* page bg — warm white */
-  --ink:          #2A0F14;
-  --text:         #3D1A20;
-  --text-mid:     #7A4A52;
-  --text-soft:    #AA8088;
-  --border:       rgba(122,21,32,0.15);
-  --border-gold:  rgba(184,134,11,0.25);
-  --shadow:       rgba(122,21,32,0.08);
+:root {
+  /* TVK flag: deep maroon · warm gold · cream */
+  --m:    #6B1120;   /* maroon */
+  --md:   #430A12;   /* maroon deep */
+  --ml:   #F7EAEC;   /* maroon lightest tint */
+  --g:    #B8892A;   /* gold */
+  --gl:   #E8C97A;   /* gold light */
+  --gp:   #FBF4E0;   /* gold pale – hero bg */
+  --gm:   #F2E2A8;   /* gold mid */
+  --wh:   #FEFCF8;   /* warm white */
+  --ink:  #1E0A0E;   /* near black */
+  --mid:  #6B3A42;   /* mid text */
+  --soft: #A07878;   /* soft text */
+  --bdr:  rgba(107,17,32,0.12);
+  --bdg:  rgba(184,137,42,0.28);
 }
 
-html{scroll-behavior:smooth}
-body{
-  font-family:'DM Sans',sans-serif;
-  background:var(--cream);
-  color:var(--text);
-  overflow-x:hidden;
+html { scroll-behavior: smooth }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--wh);
+  color: var(--ink);
+  overflow-x: hidden;
 }
 
-/* ─── TVK FLAG STRIPE AT TOP ─── */
-.flag-stripe{
-  display:flex;height:6px;
-}
-.flag-stripe .s1{flex:1;background:var(--maroon-deep)}
-.flag-stripe .s2{flex:1;background:var(--gold-rich)}
-.flag-stripe .s3{flex:1;background:var(--maroon-deep)}
-
-/* ─── TOP ANNOUNCEMENT ─── */
-.topbar{
-  background:var(--maroon);
-  color:rgba(254,250,242,0.85);
-  text-align:center;
-  padding:9px 24px;
-  font-size:12px;letter-spacing:1.5px;
-}
-.topbar strong{color:var(--gold-mid);font-weight:600}
-
-/* ─── NAV ─── */
-nav{
-  position:sticky;top:0;z-index:100;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 48px;height:62px;
-  background:rgba(254,250,242,0.94);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--border);
-  box-shadow:0 1px 12px var(--shadow);
-}
-.nav-logo{
-  font-family:'Playfair Display',serif;
-  font-size:20px;font-weight:900;
-  color:var(--maroon);letter-spacing:.5px;
-}
-.nav-logo span{color:var(--gold)}
-.nav-links{display:flex;gap:32px}
-.nav-links a{
-  color:var(--text-mid);text-decoration:none;
-  font-size:13px;font-weight:500;letter-spacing:.3px;
-  transition:color .2s;
-}
-.nav-links a:hover{color:var(--maroon)}
-.nav-sale{
-  background:var(--maroon);color:white;
-  padding:8px 20px;border-radius:5px;
-  font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
-  text-decoration:none;transition:background .2s,transform .15s;
-}
-.nav-sale:hover{background:var(--maroon-deep);transform:translateY(-1px)}
-
-/* ─── HERO ─── */
-/* Flag-inspired: top maroon band → golden centre → maroon bottom */
-.hero{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  min-height:80vh;
-  position:relative;
-  overflow:hidden;
+/* ── FLAG STRIPE ──────────────────────────────────── */
+.flag {
+  height: 5px;
+  background: linear-gradient(90deg,
+    var(--md) 0%, var(--md) 33.3%,
+    var(--gl) 33.3%, var(--gl) 66.6%,
+    var(--md) 66.6%, var(--md) 100%);
 }
 
-/* LEFT — golden centre band */
-.hero-left{
-  background:
-    linear-gradient(170deg, var(--gold-pale) 0%, var(--gold-mid) 55%, var(--gold-pale) 100%);
-  padding:80px 80px;
-  width:100%;
-  display:flex;flex-direction:column;align-items:center;text-align:center;
-  position:relative;z-index:2;
+/* ── HERO ─────────────────────────────────────────── */
+.hero {
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 24px 72px;
+  background: var(--gp);
+  position: relative;
+  overflow: hidden;
 }
-/* subtle diagonal texture lines like woven fabric */
-.hero-left::before{
-  content:'';position:absolute;inset:0;
-  background-image:repeating-linear-gradient(
-    -45deg,
-    transparent 0px, transparent 12px,
-    rgba(184,134,11,0.04) 12px, rgba(184,134,11,0.04) 13px
+
+/* Large faint TVK letters watermark */
+.hero::before {
+  content: 'TVK';
+  position: absolute;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(200px, 35vw, 420px);
+  font-weight: 700;
+  color: rgba(107,17,32,0.04);
+  letter-spacing: -0.05em;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--m);
+  border-radius: 2px;
+  padding: 6px 16px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--m);
+  margin-bottom: 40px;
+}
+.badge-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--m);
+  animation: blink 2s ease-in-out infinite;
+}
+@keyframes blink { 0%,100%{opacity:.3} 50%{opacity:1} }
+
+.hero-domain {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(64px, 14vw, 140px);
+  font-weight: 700;
+  line-height: 0.9;
+  color: var(--md);
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+.hero-domain .gold { color: var(--g) }
+.hero-domain .dim  { color: rgba(67,10,18,0.22); font-size: 0.6em }
+
+.hero-rule {
+  width: 100%;
+  max-width: 480px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--g), transparent);
+  margin: 32px auto;
+}
+
+.hero-tagline {
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--mid);
+  max-width: 440px;
+  margin: 0 auto 40px;
+  font-weight: 400;
+}
+.hero-tagline strong { color: var(--m); font-weight: 600 }
+
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 44px;
+}
+.pill {
+  background: white;
+  border: 1px solid var(--bdr);
+  border-radius: 100px;
+  padding: 7px 16px;
+  font-size: 12px;
+  color: var(--mid);
+  font-weight: 500;
+  box-shadow: 0 1px 4px rgba(107,17,32,0.06);
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--m);
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 17px 48px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background .2s, transform .2s, box-shadow .2s;
+  box-shadow: 0 4px 24px rgba(107,17,32,0.22);
+}
+.hero-cta:hover {
+  background: var(--md);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 36px rgba(107,17,32,0.32);
+}
+
+/* ── ACHIEVEMENTS ─────────────────────────────────── */
+.wins {
+  background: var(--md);
+  padding: 0 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* gold circle glow top-right */
+.wins::before {
+  content: '';
+  position: absolute;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184,137,42,0.12) 0%, transparent 70%);
+  top: -160px; right: -160px;
+  pointer-events: none;
+}
+
+/* section label tab */
+.wins-tab {
+  background: var(--g);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  margin-bottom: 64px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--md);
+}
+
+.wins-head {
+  text-align: center;
+  padding: 0 24px;
+  margin-bottom: 64px;
+}
+.wins-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 700;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+.wins-title em { font-style: italic; color: var(--gl) }
+.wins-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,0.42);
+  max-width: 420px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+/* Cards grid */
+.wins-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.win-card {
+  padding: 40px 36px;
+  border-left: 1px solid rgba(255,255,255,0.07);
+  position: relative;
+  transition: background .25s;
+}
+.win-card:first-child { border-left: none }
+.win-card:hover { background: rgba(255,255,255,0.04) }
+
+/* top gold line that grows on hover */
+.win-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 36px; right: 36px;
+  height: 2px;
+  background: var(--g);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .35s ease;
+}
+.win-card:hover::before { transform: scaleX(1) }
+
+.win-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--gl);
+  opacity: 0.22;
+  position: absolute;
+  top: 28px; right: 28px;
+  letter-spacing: -2px;
+}
+
+.win-icon {
+  font-size: 36px;
+  margin-bottom: 20px;
+  display: block;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+}
+
+.win-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--g);
+  margin-bottom: 10px;
+}
+
+.win-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 14px;
+  line-height: 1.25;
+}
+
+.win-body {
+  font-size: 13.5px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.52);
+}
+.win-body strong { color: rgba(255,255,255,0.85); font-weight: 500 }
+
+.win-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 8px 14px;
+  background: rgba(184,137,42,0.12);
+  border: 1px solid rgba(184,137,42,0.25);
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gl);
+  letter-spacing: .5px;
+}
+.win-stat::before { content:'↑'; font-size:13px }
+
+/* ── ENQUIRY ──────────────────────────────────────── */
+.enquiry {
+  background: var(--wh);
+  padding: 96px 24px;
+  text-align: center;
+  border-top: 3px solid var(--gm);
+  position: relative;
+}
+
+/* faint diagonal lines */
+.enquiry::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(
+    -55deg,
+    transparent 0px, transparent 20px,
+    rgba(107,17,32,0.015) 20px, rgba(107,17,32,0.015) 21px
   );
-  pointer-events:none;
+  pointer-events: none;
 }
 
-.eyebrow{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(122,21,32,0.1);
-  border:1px solid rgba(122,21,32,0.25);
-  border-radius:3px;
-  padding:6px 14px;
-  font-size:10px;letter-spacing:2.5px;text-transform:uppercase;
-  color:var(--maroon);font-weight:600;
-  margin-bottom:28px;
-}
-.eyebrow-dot{
-  width:6px;height:6px;border-radius:50%;
-  background:var(--maroon);
-  animation:pulse 2s ease-in-out infinite;
-}
-@keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+.enquiry-inner { max-width: 520px; margin: 0 auto; position: relative }
 
-.hero-name{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(42px,5vw,70px);
-  font-weight:900;line-height:1.03;
-  color:var(--maroon-deep);
-  margin-bottom:10px;
+.enq-eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--g);
+  margin-bottom: 16px;
 }
-.hero-name em{
-  font-style:italic;color:var(--gold);
+.enq-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(30px, 5vw, 48px);
+  font-weight: 700;
+  color: var(--md);
+  margin-bottom: 14px;
+  line-height: 1.1;
 }
-.hero-role{
-  font-size:12px;letter-spacing:3px;text-transform:uppercase;
-  color:var(--maroon-mid);font-weight:600;
-  margin-bottom:22px;
-}
-.hero-bio{
-  font-size:15px;line-height:1.85;
-  color:var(--text);max-width:580px;
-  margin-bottom:32px;
-}
-.hero-bio strong{color:var(--maroon);font-weight:600}
-
-.party-pill{
-  display:inline-flex;align-items:center;gap:10px;
-  background:rgba(122,21,32,0.07);
-  border:1px solid var(--border);
-  border-radius:100px;
-  padding:10px 20px;
-  font-size:12px;color:var(--text-mid);
-  margin-bottom:10px;width:fit-content;
-}
-.party-pill .dot{
-  width:8px;height:8px;border-radius:50%;
-  background:linear-gradient(135deg,var(--maroon),var(--gold));
-}
-.slogan{
-  font-size:13px;font-style:italic;
-  color:var(--gold);letter-spacing:.3px;
+.enq-title em { font-style: italic; color: var(--g) }
+.enq-sub {
+  font-size: 14px;
+  color: var(--soft);
+  margin-bottom: 44px;
+  line-height: 1.75;
 }
 
-/* RIGHT — maroon band (photo) */
-.hero-right{
-  background:linear-gradient(180deg, var(--maroon-deep) 0%, var(--maroon) 40%, var(--maroon-deep) 100%);
-  position:relative;overflow:hidden;
-}
-.hero-right::after{
-  content:'';position:absolute;left:0;right:0;bottom:0;height:120px;z-index:2;
-  background:linear-gradient(0deg,var(--maroon-deep),transparent);
-}
-/* subtle flag-weave texture on maroon */
-.hero-right::before{
-  content:'';position:absolute;inset:0;z-index:1;
-  background-image:repeating-linear-gradient(
-    45deg,
-    transparent 0px, transparent 10px,
-    rgba(255,255,255,0.025) 10px, rgba(255,255,255,0.025) 11px
-  );
-  pointer-events:none;
-}
-.photo-wrap{
-  position:absolute;inset:0;
-  display:flex;align-items:flex-end;justify-content:center;
-  z-index:3;
-}
-.photo-wrap img{
-  width:auto;max-width:100%;
-  height:92%;
-  object-fit:cover;object-position:top center;
-  filter:brightness(0.95) contrast(1.06) saturate(0.95);
-}
-/* left edge blend into gold */
-.photo-blend{
-  position:absolute;left:0;top:0;bottom:0;width:100px;z-index:4;
-  background:linear-gradient(90deg,var(--gold-mid),transparent);
-  pointer-events:none;
-}
-/* corner decorations */
-.photo-corner-deco{
-  position:absolute;z-index:5;
-  width:24px;height:24px;
-}
-.tl{top:24px;left:24px;border-top:2px solid rgba(245,223,160,0.5);border-left:2px solid rgba(245,223,160,0.5)}
-.tr{top:24px;right:24px;border-top:2px solid rgba(245,223,160,0.5);border-right:2px solid rgba(245,223,160,0.5)}
-.bl{bottom:24px;left:24px;border-bottom:2px solid rgba(245,223,160,0.5);border-left:2px solid rgba(245,223,160,0.5)}
-.br{bottom:24px;right:24px;border-bottom:2px solid rgba(245,223,160,0.5);border-right:2px solid rgba(245,223,160,0.5)}
-
-/* ─── STATS (flag-coloured: maroon bg like bottom flag band) ─── */
-.stats-bar{
-  background:var(--maroon-deep);
-  padding:36px 80px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:0;
-}
-.stat-item{
-  text-align:center;
-  padding:0 20px;
-  border-right:1px solid rgba(254,250,242,0.1);
-}
-.stat-item:last-child{border-right:none}
-.stat-num{
-  font-family:'Playfair Display',serif;
-  font-size:34px;font-weight:700;
-  color:var(--gold-mid);line-height:1;
-}
-.stat-label{
-  font-size:10px;letter-spacing:2px;text-transform:uppercase;
-  color:rgba(254,250,242,0.45);margin-top:7px;
+.enq-card {
+  background: var(--ml);
+  border: 1px solid var(--bdr);
+  border-radius: 8px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
-/* ─── POLICIES (golden band section) ─── */
-.policies-section{
-  background:linear-gradient(180deg, var(--gold-pale) 0%, var(--cream) 100%);
-  padding:80px 80px;
-}
-.s-eyebrow{
-  font-size:10px;letter-spacing:3px;text-transform:uppercase;
-  color:var(--maroon-mid);font-weight:600;margin-bottom:14px;
-}
-.s-title{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(28px,3.5vw,46px);font-weight:700;
-  color:var(--maroon-deep);margin-bottom:14px;line-height:1.15;
-}
-.s-title em{font-style:italic;color:var(--gold)}
-.s-sub{
-  font-size:14.5px;color:var(--text-mid);line-height:1.8;
-  max-width:520px;margin-bottom:52px;
+.enq-email-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--soft);
 }
 
-.policies-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
-  gap:18px;
+.enq-email-link {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 3vw, 26px);
+  font-weight: 600;
+  color: var(--m);
+  text-decoration: none;
+  border-bottom: 1px solid var(--bdg);
+  padding-bottom: 3px;
+  transition: color .2s, border-color .2s;
+  word-break: break-all;
 }
-.p-card{
-  background:white;
-  border:1px solid var(--border);
-  border-top:3px solid var(--maroon);
-  border-radius:0 0 10px 10px;
-  padding:26px 24px;
-  transition:box-shadow .25s,transform .2s;
-  position:relative;
-}
-.p-card:hover{
-  box-shadow:0 8px 32px var(--shadow);
-  transform:translateY(-3px);
-}
-/* alternate top border gold */
-.p-card:nth-child(even){border-top-color:var(--gold)}
+.enq-email-link:hover { color: var(--md); border-color: var(--g) }
 
-.p-num{
-  font-size:10px;letter-spacing:2.5px;text-transform:uppercase;
-  color:var(--text-soft);margin-bottom:12px;
-  display:flex;align-items:center;gap:8px;
+.enq-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--m);
+  color: white;
+  text-decoration: none;
+  padding: 16px 44px;
+  border-radius: 3px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: background .2s, transform .2s, box-shadow .2s;
+  box-shadow: 0 4px 20px rgba(107,17,32,0.2);
+  width: 100%;
+  justify-content: center;
 }
-.p-num::before{content:'';display:inline-block;width:16px;height:1px;background:currentColor}
-.p-icon{font-size:26px;margin-bottom:12px;display:block}
-.p-title{
-  font-family:'Playfair Display',serif;
-  font-size:16px;font-weight:700;
-  color:var(--maroon-deep);margin-bottom:10px;line-height:1.3;
-}
-.p-desc{font-size:13px;color:var(--text-mid);line-height:1.75}
-.p-tag{
-  display:inline-block;margin-top:14px;
-  background:var(--maroon-light);
-  border:1px solid rgba(122,21,32,0.2);
-  border-radius:3px;padding:3px 10px;
-  font-size:11px;font-weight:600;
-  color:var(--maroon);letter-spacing:.3px;
-}
-.p-card:nth-child(even) .p-tag{
-  background:var(--gold-pale);
-  border-color:var(--border-gold);
-  color:var(--gold);
+.enq-btn:hover {
+  background: var(--md);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 28px rgba(107,17,32,0.3);
 }
 
-/* ─── FOR SALE (maroon band section) ─── */
-.sale-section{
-  background:linear-gradient(135deg, var(--maroon-deep) 0%, var(--maroon) 60%, var(--maroon-deep) 100%);
-  padding:88px 40px;
-  text-align:center;
-  position:relative;overflow:hidden;
-}
-.sale-section::before{
-  content:'';position:absolute;inset:0;
-  background-image:repeating-linear-gradient(
-    -45deg,
-    transparent 0px, transparent 15px,
-    rgba(245,223,160,0.04) 15px, rgba(245,223,160,0.04) 16px
-  );
-  pointer-events:none;
-}
-.sale-inner{max-width:620px;margin:0 auto;position:relative;z-index:1}
-
-.for-sale-badge{
-  display:inline-flex;align-items:center;gap:8px;
-  background:var(--gold-rich);color:var(--maroon-deep);
-  border-radius:4px;padding:6px 18px;
-  font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
-  margin-bottom:28px;
-}
-.sale-domain{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(38px,6vw,66px);font-weight:900;
-  color:white;line-height:1;margin-bottom:4px;
-}
-.sale-domain span{color:var(--gold-mid)}
-.sale-domain .tld{color:rgba(254,250,242,0.35)}
-.sale-desc{
-  font-size:15px;color:rgba(254,250,242,0.62);
-  line-height:1.8;max-width:460px;margin:16px auto 36px;
-}
-.sale-features{
-  display:flex;justify-content:center;gap:20px;flex-wrap:wrap;
-  margin-bottom:40px;
-}
-.sf{
-  font-size:12px;color:rgba(254,250,242,0.55);
-  display:flex;align-items:center;gap:6px;
-}
-.sf::before{content:'✓';color:var(--gold-mid);font-weight:700}
-
-.btn-gold{
-  display:inline-block;
-  background:var(--gold-rich);color:var(--maroon-deep);
-  text-decoration:none;padding:14px 38px;border-radius:5px;
-  font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
-  transition:transform .2s,box-shadow .2s;
-  margin:0 8px 12px;
-}
-.btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,0.25)}
-
-.btn-outline{
-  display:inline-block;
-  background:transparent;
-  border:1px solid rgba(245,223,160,0.4);
-  color:var(--gold-mid);text-decoration:none;
-  padding:13px 34px;border-radius:5px;
-  font-size:13px;font-weight:500;
-  transition:background .2s,transform .2s;
-  margin:0 8px 12px;
-}
-.btn-outline:hover{background:rgba(245,223,160,0.1);transform:translateY(-2px)}
-
-.contact-note{
-  margin-top:20px;font-size:11px;
-  color:rgba(254,250,242,0.25);letter-spacing:.5px;
+.enq-note {
+  font-size: 11px;
+  color: var(--soft);
+  opacity: .6;
+  line-height: 1.6;
 }
 
-/* ─── FOOTER ─── */
-footer{
-  background:var(--gold-pale);
-  border-top:1px solid var(--border-gold);
-  padding:36px 80px;
-  display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:14px;
+/* ── FOOTER ───────────────────────────────────────── */
+footer {
+  background: var(--ink);
+  padding: 24px;
+  text-align: center;
+  font-size: 11px;
+  color: rgba(255,255,255,0.22);
+  letter-spacing: .5px;
+  line-height: 1.7;
 }
-.footer-logo{
-  font-family:'Playfair Display',serif;
-  font-size:18px;font-weight:900;color:var(--maroon-deep);
-}
-.footer-logo span{color:var(--gold)}
-.footer-note{font-size:11.5px;color:var(--text-soft);line-height:1.65;max-width:380px;text-align:center}
-.footer-fan{font-size:12px;color:var(--maroon-mid);font-weight:600}
 
-/* ─── RESPONSIVE ─── */
-@media(max-width:900px){
-  .hero{grid-template-columns:1fr}
-  .hero-left{padding:56px 28px}
-  .stats-bar{grid-template-columns:repeat(2,1fr);padding:32px 24px}
-  .stat-item{border-right:none;border-bottom:1px solid rgba(254,250,242,0.1);padding:16px 0}
-  .policies-section{padding:60px 24px}
-  nav{padding:0 20px}
-  .nav-links{display:none}
-  footer{padding:28px 24px;flex-direction:column;text-align:center}
-  .footer-note{text-align:center;max-width:100%}
+/* ── RESPONSIVE ───────────────────────────────────── */
+@media (max-width: 800px) {
+  .wins-grid { grid-template-columns: 1fr }
+  .win-card { border-left: none; border-top: 1px solid rgba(255,255,255,0.07); padding: 36px 28px }
+  .win-card:first-child { border-top: none }
+}
+@media (max-width: 480px) {
+  .hero-domain { font-size: clamp(52px, 18vw, 96px) }
+  .enq-card { padding: 24px 20px }
 }
 </style>
 </head>
 <body>
 
-<!-- TVK FLAG STRIPE -->
-<div class="flag-stripe"><div class="s1"></div><div class="s2"></div><div class="s3"></div></div>
+<div class="flag"></div>
 
-<!-- TOP BAR -->
-<div class="topbar">
-  <strong>Breaking:</strong> &nbsp;C. Joseph Vijay sworn in as Chief Minister of Tamil Nadu · May 2026 &nbsp;·&nbsp; <strong>tvkhub.com is for sale</strong>
-</div>
-
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">TVK<span>hub</span></div>
-  <div class="nav-links">
-    <a href="#policies">Policies</a>
-    <a href="#about">About TVK</a>
-    <a href="#sale">Domain</a>
-  </div>
-  <a href="#sale" class="nav-sale">🏷️ Domain For Sale</a>
-</nav>
-
-<!-- ─── HERO ─── -->
+<!-- ── HERO ── -->
 <section class="hero">
-  <!-- LEFT: golden yellow band -->
-  <div class="hero-left">
-    <div class="eyebrow">
-      <span class="eyebrow-dot"></span>
-      Chief Minister of Tamil Nadu · 2026
-    </div>
+  <div class="hero-badge"><span class="badge-dot"></span> Premium Domain For Sale</div>
 
-    <h1 class="hero-name">
-      C. Joseph
-      <em>Vijay</em>
-    </h1>
-    <p class="hero-role">Thalapathy · CM Tamil Nadu · TVK Founder &amp; President</p>
+  <h1 class="hero-domain">
+    <span class="gold">tvk</span>hub<span class="dim">.com</span>
+  </h1>
 
-    <p class="hero-bio">
-      From Tamil cinema's biggest star to Tamil Nadu's Chief Minister —
-      <strong>Joseph Vijay Chandrasekhar</strong> was sworn in on May 2026,
-      ending 59 years of Dravidian party dominance. His TVK won 107 seats in a
-      historic mandate for change.
-    </p>
+  <div class="hero-rule"></div>
 
-    <div class="party-pill">
-      <span class="dot"></span>
-      Tamilaga Vettri Kazhagam (TVK) · Est. Feb 2, 2024
-    </div>
-    <p class="slogan">"Pirappokkum Ella Uyirkum" — All are equal by birth</p>
+  <p class="hero-tagline">
+    The natural home for <strong>Tamilaga Vettri Kazhagam</strong> —
+    a short, powerful .com ready for an official hub, news portal,
+    or member platform.
+  </p>
+
+  <div class="hero-pills">
+    <span class="pill">Short &amp; memorable</span>
+    <span class="pill">Perfectly on-brand for TVK</span>
+    <span class="pill">.com — global standard</span>
+    <span class="pill">Instant transfer</span>
   </div>
 
+  <button class="hero-cta" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">
+    Make an Enquiry
+  </button>
 </section>
 
-<!-- STATS BAR: maroon bottom band -->
-<div class="stats-bar">
-  <div class="stat-item">
-    <div class="stat-num">107</div>
-    <div class="stat-label">Assembly Seats Won</div>
+<!-- ── ACHIEVEMENTS ── -->
+<section class="wins">
+  <div class="wins-tab">✦ &nbsp; TVK in Action &nbsp; · &nbsp; Since May 2026</div>
+
+  <div class="wins-head">
+    <h2 class="wins-title">Early Wins of<br><em>Vijay's Government</em></h2>
+    <p class="wins-sub">Within weeks of taking office, real change is already visible across Tamil Nadu.</p>
   </div>
-  <div class="stat-item">
-    <div class="stat-num">15M+</div>
-    <div class="stat-label">Party Members</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">40</div>
-    <div class="stat-label">Policy Guarantees</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">59 yrs</div>
-    <div class="stat-label">Dravidian Rule Ended</div>
-  </div>
-</div>
 
-<!-- ─── POLICIES ─── -->
-<section id="policies" class="policies-section">
-  <div style="max-width:1200px;margin:0 auto">
-    <p class="s-eyebrow">TVK Governing Mandate · 10 Guarantees</p>
-    <h2 class="s-title">Key <em>Policies</em> &amp; Promises</h2>
-    <p class="s-sub">A 40-point, 10-guarantee blueprint — each commitment backed by a rupee figure, a responsible department, and a clear delivery deadline.</p>
+  <div class="wins-grid">
 
-    <div class="policies-grid">
-
-      <div class="p-card">
-        <span class="p-icon">👩‍👧</span>
-        <p class="p-num">Guarantee 01</p>
-        <h3 class="p-title">Women &amp; Family Welfare</h3>
-        <p class="p-desc">₹2,500 per month for women heads of household. 8-gram gold &amp; silk saree for brides from low-income families. ₹25,000 pregnancy support grant.</p>
-        <span class="p-tag">₹2,500 / month</span>
-      </div>
-
-      <div class="p-card">
-        <span class="p-icon">🏥</span>
-        <p class="p-num">Guarantee 02</p>
-        <h3 class="p-title">Health for All</h3>
-        <p class="p-desc">₹25 lakh comprehensive health insurance for every family. Gold ring + Baby Welcome Kit for every child born in a government hospital.</p>
-        <span class="p-tag">₹25 lakh cover</span>
-      </div>
-
-      <div class="p-card">
-        <span class="p-icon">📚</span>
-        <p class="p-num">Guarantee 03</p>
-        <h3 class="p-title">Education Revolution</h3>
-        <p class="p-desc">₹15,000 annual grant for parents of Class 1–12 students to prevent dropouts. Investment in Tamil-language digital learning and computational infrastructure.</p>
-        <span class="p-tag">₹15,000 / year</span>
-      </div>
-
-      <div class="p-card">
-        <span class="p-icon">⚡</span>
-        <p class="p-num">Guarantee 04</p>
-        <h3 class="p-title">Free Electricity &amp; Amenities</h3>
-        <p class="p-desc">200 units of free electricity monthly for every household. Expanded clean water access, roads, and essential services across all 38 districts.</p>
-        <span class="p-tag">200 units free</span>
-      </div>
-
-      <div class="p-card">
-        <span class="p-icon">🌾</span>
-        <p class="p-num">Guarantee 05</p>
-        <h3 class="p-title">Farmer First</h3>
-        <p class="p-desc">Complete waiver of all outstanding farmer loans. Fair minimum support prices, expanded irrigation, and priority agricultural development for rural Tamil Nadu.</p>
-        <span class="p-tag">Full loan waiver</span>
-      </div>
-
-      <div class="p-card">
-        <span class="p-icon">💼</span>
-        <p class="p-num">Guarantee 06</p>
-        <h3 class="p-title">Jobs &amp; Youth Opportunities</h3>
-        <p class="p-desc">Youth employment schemes, skill development centres, and startup support across all districts to reduce unemployment and grow the Tamil Nadu workforce.</p>
-        <span class="p-tag">Youth-first</span>
-      </div>
-
-      <div class="p-card">
-        <span class="p-icon">🛡️</span>
-        <p class="p-num">Guarantee 07</p>
-        <h3 class="p-title">Anti-Drug &amp; Social Harmony</h3>
-        <p class="p-desc">Zero tolerance for drug trafficking. Anti-caste enforcement, inter-community harmony programs, and social justice as foundational governance pillars.</p>
-        <span class="p-tag">Zero tolerance</span>
-      </div>
-
-      <div class="p-card">
-        <span class="p-icon">🌐</span>
-        <p class="p-num">Governance Stance</p>
-        <h3 class="p-title">Language Policy &amp; State Rights</h3>
-        <p class="p-desc">Tamil and English as the only official languages — firm rejection of Hindi imposition. Advocates abolishing the Governor's post to protect the elected state mandate.</p>
-        <span class="p-tag">Tamil + English only</span>
-      </div>
-
-      <div class="p-card">
-        <span class="p-icon">🖥️</span>
-        <p class="p-num">Guarantee 08</p>
-        <h3 class="p-title">Clean &amp; Digital Governance</h3>
-        <p class="p-desc">Digital-first government services, full transparency in public spending, and technology-driven administration to eliminate corruption for every citizen.</p>
-        <span class="p-tag">Digital Tamil Nadu</span>
-      </div>
-
+    <div class="win-card">
+      <span class="win-number">01</span>
+      <span class="win-icon">🍽️</span>
+      <p class="win-label">Food Welfare</p>
+      <h3 class="win-title">Amma Canteen Revival</h3>
+      <p class="win-body">CM Vijay ordered a full revamp of all <strong>620 Amma Canteens</strong> across Tamil Nadu — modernising kitchens, improving hygiene, and upgrading infrastructure after years of neglect. Chennai's canteens saw footfall surge immediately.</p>
+      <span class="win-stat">55% rise in daily visitors · 67K → 1.04 lakh</span>
     </div>
+
+    <div class="win-card">
+      <span class="win-number">02</span>
+      <span class="win-icon">👩‍👧</span>
+      <p class="win-label">Women's Welfare</p>
+      <h3 class="win-title">Monthly Payment to Women</h3>
+      <p class="win-body">The TVK government transferred <strong>₹1,000 per month</strong> to women beneficiaries under the Kalaignar Magalir Urimai Thogai scheme on May 15 — one of the first acts after taking office, with a commitment to raise it to ₹2,500.</p>
+      <span class="win-stat">₹1,000 transferred · May 15, 2026</span>
+    </div>
+
+    <div class="win-card">
+      <span class="win-number">03</span>
+      <span class="win-icon">🏛️</span>
+      <p class="win-label">Historic Mandate</p>
+      <h3 class="win-title">A New Era for Tamil Nadu</h3>
+      <p class="win-body">TVK won <strong>108 seats</strong> in the 2026 Assembly elections and secured majority support of 120 MLAs. Vijay was sworn in as Chief Minister on May 10, 2026 — ending 59 years of Dravidian party dominance.</p>
+      <span class="win-stat">108 seats · Sworn in May 10, 2026</span>
+    </div>
+
   </div>
 </section>
 
-<!-- ─── DOMAIN FOR SALE ─── -->
-<section id="sale" class="sale-section">
-  <div class="sale-inner">
-    <span class="for-sale-badge">🏷️ &nbsp; Premium Domain For Sale</span>
+<!-- ── ENQUIRY ── -->
+<section class="enquiry" id="enquiry">
+  <div class="enquiry-inner">
+    <p class="enq-eyebrow">Own This Domain</p>
+    <h2 class="enq-title">Interested in<br><em>tvkhub.com</em>?</h2>
+    <p class="enq-sub">Drop us an email — we'll respond promptly with pricing and transfer details.</p>
 
-    <h2 class="sale-domain">
-      <span>tvkhub</span><span class="tld">.com</span>
-    </h2>
-
-    <p class="sale-desc">
-      A short, memorable domain perfectly branded for the Tamilaga Vettri Kazhagam movement.
-      Ideal for news portals, fan platforms, official party media, or political commentary sites
-      covering Tamil Nadu's new political era.
-    </p>
-
-    <div class="sale-features">
-      <span class="sf">Short &amp; memorable</span>
-      <span class="sf">Perfectly on-brand for TVK</span>
-      <span class="sf">Price negotiable</span>
-      <span class="sf">Serious buyers only</span>
-    </div>
-
-    <div>
-      <a href="mailto:cpremrajvenu@gmail.com?subject=Enquiry: tvkhub.com purchase&body=Hi%2C%0A%0AI am interested in purchasing the domain tvkhub.com.%0A%0APlease share the price and further details.%0A%0AThank you." class="btn-gold">
-        📩 &nbsp; Enquire to Buy
+    <div class="enq-card">
+      <span class="enq-email-label">Contact the owner directly</span>
+      <a href="mailto:cpremrajvenu@gmail.com" class="enq-email-link">cpremrajvenu@gmail.com</a>
+      <a href="mailto:cpremrajvenu@gmail.com?subject=Enquiry: tvkhub.com domain purchase&body=Hi%2C%0A%0AI am interested in purchasing the domain tvkhub.com.%0A%0APlease share the asking price and transfer details.%0A%0AThank you." class="enq-btn">
+        📩 &nbsp; Send an Enquiry Email
       </a>
+      <p class="enq-note">Clicking opens your email app with the subject pre-filled · Serious buyers only</p>
     </div>
-
-    <p class="contact-note">Enquiries go directly to the domain owner · Currently parked · Serious buyers only</p>
   </div>
 </section>
 
-<!-- ─── FOOTER ─── -->
 <footer>
-  <div class="footer-logo">TVK<span>hub</span></div>
-  <p class="footer-note">Unofficial fan page. Not affiliated with TVK, the Tamil Nadu Government, or C. Joseph Vijay. Photo: Wikimedia Commons, CC BY-SA 2.0.</p>
-  <p class="footer-fan">❤️ Made with love by a Thalapathy fan</p>
+  tvkhub.com is privately owned and available for purchase &nbsp;·&nbsp; Not affiliated with TVK or the Tamil Nadu Government
 </footer>
 
-<!-- TVK FLAG STRIPE -->
-<div class="flag-stripe"><div class="s1"></div><div class="s2"></div><div class="s3"></div></div>
+<div class="flag"></div>
 
 </body>
 </html>
